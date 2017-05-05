@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<t:SlideMenuView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:t="clr-namespace:SlideOverKit"
+    xmlns:local="clr-namespace:Blaze"
+    x:Class="Blaze.SlideItems">
+
+
+    <local:GradiantGrid  Padding="0, 20, 0, 10" BackgroundColor="LightSeaGreen">
+
+
+        <local:GradiantGrid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="34" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="2" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="36" />
+        </local:GradiantGrid.RowDefinitions>
+       
+        <Label Text="Your gender?" TextColor="White" HorizontalOptions="Center" Grid.Row="0"  />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--<Frame OutlineColor="#c73f3b" BackgroundColor="Transparent" HorizontalOptions="End">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="male.png"  />
+                    <Label Text="Male" TextColor="White" />
+                </StackLayout>
+                
+            </Frame>-->
+            <Button BorderRadius="5"  WidthRequest="80" Text="Male" FontAttributes="Bold" BackgroundColor="#c73f3b" HorizontalOptions="End" TextColor="White"/>
+            <Button BorderRadius="5"  WidthRequest="80" Text="Female" FontAttributes="Bold" BackgroundColor="#c73f3b"  Grid.Column="1"  HorizontalOptions="Start" TextColor="White"/>
+        </Grid>
+        <BoxView Grid.Row="3" WidthRequest="120" BackgroundColor="Black" Margin="25,0,20,0" />
+        <Label Text="How old are you ?" Grid.Row="5" TextColor="White" HorizontalOptions="Center" />
+        <local:ZoomableScrollView Grid.Row="7" x:Name="scrl"  HorizontalOptions="FillAndExpand" Orientation="Horizontal" />
+        <BoxView Grid.Row="9" WidthRequest="120" BackgroundColor="Black" Margin="25,0,20,0" />
+        <Button BorderRadius="5"  WidthRequest="80" Text="DONE" FontAttributes="Bold" BackgroundColor="#c73f3b" HorizontalOptions="Center" TextColor="White" Grid.Row="10"/>
+    </local:GradiantGrid>
+</t:SlideMenuView>
