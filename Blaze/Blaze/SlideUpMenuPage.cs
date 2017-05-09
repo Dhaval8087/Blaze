@@ -12,26 +12,25 @@ namespace Blaze
     {
         public SlideUpMenuPage()
         {
-            Content = new StackLayout
-            {
-                VerticalOptions = LayoutOptions.Center,
-                Spacing = 10,
-                Children = {
-                    new Button{
-                        Text ="Show Menu",
-                        Command = new Command(()=>{
-                            this.ShowMenu();
-                        })
-                    },
-                    new Button{
-                        Text ="Hide Menu",
-                        Command = new Command(()=>{
-                            this.HideMenu();
-                        })
-                    },
-                }
-            };
+            var ctn = new StackLayout();
+            var img = new Image();
+            img.VerticalOptions = LayoutOptions.Start;
+            img.HorizontalOptions = LayoutOptions.Center;
+            var windowSize = App.Height/2;
+            img.HeightRequest = windowSize;
+            img.Source = ImageSource.FromFile("blaze_logo.png");
+            ctn.Children.Add(img);
+
+
+            Content = ctn;
+
+
             this.SlideMenu = new SlideItems();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.ShowMenu();
         }
     }
 }
